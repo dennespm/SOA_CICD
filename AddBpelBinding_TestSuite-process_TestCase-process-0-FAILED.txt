@@ -1,0 +1,43 @@
+Status: FAILED
+Time Taken: 215
+Size: 0
+Timestamp: Wed Aug 12 15:32:05 EDT 2020
+TestStep: process
+
+----------------- Messages ------------------------------
+[Contains] null/empty response
+
+----------------- Properties ------------------------------
+Endpoint: http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addbpel_client_ep
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : "process"
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.1.1 (java 1.5)
+Host : oraclesoatesthapaas.scholastic.com:80
+Accept-Encoding : gzip,deflate
+Content-Length : 297
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <exam:INPUT>
+         <exam:Num1>1</exam:Num1>
+         <exam:Num2>1</exam:Num2>
+      </exam:INPUT>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Transfer-Encoding : chunked
+X-ORACLE-DMS-ECID : 517ff3c3-6a9f-4a9b-9cbc-2f66ad3bbec1-0077cd8a
+Connection : keep-alive
+#status# : HTTP/1.1 404 Not Found
+X-ORACLE-DMS-RID : 0
+Date : Wed, 12 Aug 2020 19:32:02 GMT
+Content-Type : application/soap+xml
+
+

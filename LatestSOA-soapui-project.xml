@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="16563073-221f-47c8-a1fe-faf266b9d4d8" activeEnvironment="Default" name="LatestSOA" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="50fe7b58-90ab-4e4f-9410-39a840a8033b" wsaVersion="NONE" name="AddOnlyBinding" type="wsdl" bindingName="{http://xmlns.oracle.com/TestSOAApp/TestProject/AddOnly}AddOnlyBinding" soapVersion="1_1" anonymous="optional" definition="http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep?WSDL"><con:part><con:url>http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="AddOnly" targetNamespace="http://xmlns.oracle.com/TestSOAApp/TestProject/AddOnly" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:client="http://xmlns.oracle.com/TestSOAApp/TestProject/AddOnly" xmlns:ns1="http://www.example.org" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject!1.0-SNAPSHOT/WSDLs/AddOnly.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="AddOnly">
+    <plnk:role name="AddOnlyProvider" portType="client:AddOnly"/>
+  </plnk:partnerLinkType>
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.example.org" schemaLocation="http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep?XSD=../Schemas/add.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="AddOnlyRequestMessage">
+    <wsdl:part name="payload" element="ns1:INPUT"/>
+  </wsdl:message>
+  <wsdl:message name="AddOnlyResponseMessage">
+    <wsdl:part name="payload" element="ns1:OUTOUT"/>
+  </wsdl:message>
+  <wsdl:portType name="AddOnly">
+    <wsdl:operation name="process">
+      <wsdl:input message="client:AddOnlyRequestMessage"/>
+      <wsdl:output message="client:AddOnlyResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AddOnlyBinding" type="client:AddOnly">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="process">
+      <soap:operation style="document" soapAction="process"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="addonly_client_ep">
+    <wsdl:port name="AddOnly_pt" binding="client:AddOnlyBinding">
+      <soap:address location="http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep?XSD=../Schemas/add.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://www.example.org" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org">
+  <xsd:element name="exampleElement">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="IN">
+    <xsd:sequence>
+      <xsd:element name="Num1" type="xsd:integer"/>
+      <xsd:element name="Num2" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="INPUT" type="IN"/>
+  <xsd:complexType name="OUT">
+    <xsd:sequence>
+      <xsd:element name="RESULT" type="xsd:integer"/>
+      <xsd:element name="COMMENT" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="OUTOUT" type="OUT"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep</con:endpoint></con:endpoints><con:operation id="240c58dd-b2c8-4be2-ba8d-dd779faa7207" isOneWay="false" action="process" name="process" bindingOperationName="process" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ef84022-91a8-4d5f-bd59-3f754f65714f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <exam:INPUT>
+         <exam:Num1>1</exam:Num1>
+         <exam:Num2>1</exam:Num2>
+      </exam:INPUT>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="process"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="2b99c790-0e8f-4cba-90fc-88f28f2a42ac" name="AddOnlyBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="174e5b80-ff34-4ce6-8260-ef1b8f30e277" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="process TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="32ac6343-c281-4718-b7a9-18dfd841c693" name="process"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AddOnlyBinding</con:interface><con:operation>process</con:operation><con:request name="process" id="4d906b29-11e8-4bab-a7e3-7aa457173653"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://oraclesoatesthapaas.scholastic.com:80/soa-infra/services/default/TestProject/addonly_client_ep</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:exam="http://www.example.org">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <exam:INPUT>
+         <exam:Num1>1</exam:Num1>
+         <exam:Num2>1</exam:Num2>
+      </exam:INPUT>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="367d12a2-c8bb-4ca2-a8dc-bf39b2e05284" name="Contains"><con:configuration><token>2</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="process" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
