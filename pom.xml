@@ -32,7 +32,7 @@
   </parent>
   <properties>
     <!-- these parameters are used by the compile goal -->
-    <!--<jndi.properties.input>${project.basedir}/jndi.properties</jndi.properties.input> -->
+    
     <scac.input.dir>${project.basedir}/SOA/</scac.input.dir>
     <scac.output.dir>${project.basedir}/target</scac.output.dir>
     <scac.input>${scac.input.dir}/composite.xml</scac.input>
