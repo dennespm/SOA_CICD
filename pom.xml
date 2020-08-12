@@ -135,7 +135,7 @@
           </dependency>
         </dependencies>
         <configuration>
-          <projectFile>TestProject/LatestSOA-soapui-project.xml</projectFile>
+          <projectFile>LatestSOA-soapui-project.xml</projectFile>
           <projectProperties>
             <value>message=Hello World!</value>
           </projectProperties>
