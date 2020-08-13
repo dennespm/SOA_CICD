@@ -76,6 +76,17 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
    </list>
    <value n="defaultPackage" v=""/>
+   <hash n="oracle.ide.model.ResourcePaths">
+      <hash n="resourcesContentSet">
+         <list n="pattern-filters">
+            <string v="-soapui-errors.log"/>
+            <string v="+*"/>
+         </list>
+         <list n="url-path">
+            <url path="."/>
+         </list>
+      </hash>
+   </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="SOA"/>
@@ -105,6 +116,10 @@
          <string v=".xml"/>
          <string v=".xsd"/>
          <string v=".xsl"/>
+         <string v=".exm"/>
+         <string v=".xml"/>
+         <string v=".exm"/>
+         <string v=".xml"/>
          <string v=".exm"/>
          <string v=".xml"/>
          <string v=".exm"/>
