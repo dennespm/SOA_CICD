@@ -75,7 +75,7 @@
         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns1:RESULT</to>
       </copy>
       <copy>
-        <from>'Addition Is Done'</from>
+        <from>'Addition Is Done Two'</from>
         <to expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">$outputVariable.payload/ns1:COMMENT</to>
       </copy>
     </assign>

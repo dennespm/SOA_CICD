@@ -95,32 +95,12 @@
                              your SOA Quickstart or JDeveloper install directory, 
                              with "/soa" appended to it.
                     -->
-          <oracleHome>/var/lib/jenkins/workspace/OracleHome</oracleHome>
+          <!-- <oracleHome>/var/lib/jenkins/workspace/OracleHome</oracleHome>>-->
           <!--<soaOracleHome>JDEV_HOME/soa</soaOracleHome>-->
           <input>${input}</input>
         </configuration>
         <!-- extensions=true is needed to use the custom sar packaging type -->
         <extensions>true</extensions>
-      </plugin>
-      <plugin>
-        <groupId>com.oracle.adf.plugin</groupId>
-        <artifactId>ojdeploy</artifactId>
-        <version>12.2.1-3-0</version>
-        <configuration>
-          <ojdeploy>/var/lib/jenkins/workspace/OracleHome/jdeveloper/jdev/bin/ojdeploy</ojdeploy>
-          <workspace>${basedir}/../TestSOAApp.jws</workspace>
-          <project>TestProject</project>
-          <profile>TestProject</profile>
-          <outputfile>${project.build.directory}/${project.build.finalName}.jar</outputfile>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>deploy</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>com.smartbear.soapui</groupId>
@@ -141,9 +121,39 @@
         </configuration>
         <executions>
           <execution>
-            <phase>pre-integration</phase>
+            <phase>pre-integration-test</phase>
             <goals>
               <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.oracle.adf.plugin</groupId>
+        <artifactId>ojdeploy</artifactId>
+        <version>12.2.1-3-0</version>
+        <configuration>
+          <ojdeploy>
+            ${oracleHome}/jdeveloper/jdev/bin/ojdeploy
+          </ojdeploy>
+          <workspace>
+            ${basedir}/../TestSOAApp.jws
+          </workspace>
+          <project>
+            TestProject
+          </project>
+          <profile>
+            TestProject
+          </profile>
+          <outputfile>
+            ${project.build.directory}/${project.build.finalName}.jar
+          </outputfile>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>deploy</goal>
             </goals>
           </execution>
         </executions>
