@@ -46,8 +46,8 @@
     <composite.revision>${project.version}</composite.revision>
     <composite.partition>default</composite.partition>
     <serverUrl>http://10.193.8.24:9073</serverUrl>
-    <user>%USERNAME%</user>
-    <password>%PASSWORD%</password>
+    <user></user>
+    <password></password>
     <overwrite>true</overwrite>
     <forceDefault>true</forceDefault>
     <regenerateRulebase>false</regenerateRulebase>
